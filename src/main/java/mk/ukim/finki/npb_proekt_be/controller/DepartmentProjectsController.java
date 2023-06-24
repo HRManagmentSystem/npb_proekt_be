@@ -19,7 +19,7 @@ public class DepartmentProjectsController {
 
     @GetMapping("/first")
     public List<DepartmentProjects> findFirstDepartmentProjects(@RequestParam Integer n) {
-        return this.departmentProjectsService.findFirstDepartmentProjects(50);
+        return this.departmentProjectsService.findFirstDepartmentProjects(n);
     }
     
     @GetMapping("")
