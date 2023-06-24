@@ -13,6 +13,10 @@ public class EmployeeMostRecentPaymentViewService {
 
     private final EmployeeMostRecentPaymentViewRepo employeeMostRecentPaymentViewRepo;
 
+    public List<EmployeeMostRecentPaymentView> findFirstEmployeeMostRecentPaymentView(Integer n) {
+        return this.employeeMostRecentPaymentViewRepo.findFirstEmployeeMostRecentPaymentView(n);
+    }
+
     public List<EmployeeMostRecentPaymentView> findAllByEmployeeIdAndPaymentId(Integer eId, Integer pId) {
         return this.employeeMostRecentPaymentViewRepo.findAllByEmployeeIdAndPaymentId(eId, pId);
     }

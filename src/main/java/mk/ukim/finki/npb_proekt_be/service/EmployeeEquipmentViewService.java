@@ -13,6 +13,11 @@ public class EmployeeEquipmentViewService {
 
     private final EmployeeEquipmentViewRepo employeeEquipmentViewRepo;
 
+
+    public List<EmployeeEquipmentView> findFirstEmployeeEquipmentView(Integer n) {
+        return this.employeeEquipmentViewRepo.findFirstEmployeeEquipmentView(n);
+    }
+
     public List<EmployeeEquipmentView> findEmployeeEquipmentViewByEmployeeIdAndEquipmentId(Integer eId, Integer eqId) {
         return this.employeeEquipmentViewRepo.findAllByEmployeeIdAndEquipmentId(eId,eqId);
     }

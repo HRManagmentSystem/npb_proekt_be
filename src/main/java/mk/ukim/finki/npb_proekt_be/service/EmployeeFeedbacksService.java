@@ -13,6 +13,10 @@ public class EmployeeFeedbacksService {
 
     private final EmployeeFeedbacksRepo employeeFeedbacksRepo;
 
+    public List<EmployeeFeedbacks> findFirstEmployeeFeedbacks(Integer n){
+        return this.employeeFeedbacksRepo.findFirstEmployeeFeedbacks(n);
+    }
+
     public List<EmployeeFeedbacks> findAllByEmployeeIdAndPeerFeedbackIdAndPeerFeedbackQuestionAnswer(Integer eId, Integer pfId, Integer pfqaId) {
         return this.employeeFeedbacksRepo.findAllByEmployeeIdAndPeerFeedbackIdAndPeerFeedbackQuestionAnswer(eId,pfId,pfqaId);
     }

@@ -12,6 +12,10 @@ import java.util.List;
 public class JobAdsService {
     private final JobAdsRepo jobAdsRepo;
 
+    public List<JobAds> findFirstJobAds(Integer n) {
+        return this.jobAdsRepo.findFirstJobAds(n);
+    }
+
     public List<JobAds> findJobsById(Integer jobAdsId) {
         return this.jobAdsRepo.findJobAdsByJobAdId(jobAdsId);
     }

@@ -14,6 +14,10 @@ public class EmployeeInOnboardingPhaseService {
 
     private final EmployeeInOnboardingPhaseRepo employeeInOnboardingPhaseRepo;
 
+    public List<EmployeeInOnboardingPhase> findFirstEmployeeInOnboardingPhase(Integer n) {
+        return this.employeeInOnboardingPhaseRepo.findFirstEmployeeInOnboardingPhase(n);
+    }
+
     public List<EmployeeInOnboardingPhase> findAllByEmployeeIdAndProgramId(Integer eId, Integer pId) {
         return this.employeeInOnboardingPhaseRepo.findAllByEmployeeIdAndProgramId(eId, pId);
     }

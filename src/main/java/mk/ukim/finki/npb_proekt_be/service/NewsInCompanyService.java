@@ -13,6 +13,10 @@ public class NewsInCompanyService {
 
     private final NewsInCompanyRepo newsInCompanyRepo;
 
+    public List<NewsInCompany> findFirstNewsInCompany(Integer n) {
+        return this.newsInCompanyRepo.findFirstNewsInCompany(n);
+    }
+
     public List<NewsInCompany> findAllByNewsIdAndPublisherId(Integer nId, Integer pId){
         return this.newsInCompanyRepo.findAllByNewsIdAndPublisherId(nId, pId);
     }

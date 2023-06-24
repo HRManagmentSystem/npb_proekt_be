@@ -13,6 +13,10 @@ public class EmployeeProjectViewService {
 
     private final EmployeeProjectViewRepo employeeProjectViewRepo;
 
+    public List<EmployeeProjectView> findFirstEmployeeProjectView(Integer n) {
+        return this.employeeProjectViewRepo.findFirstEmployeeProjectView(n);
+    }
+
     public List<EmployeeProjectView> findAllByEmployeeIdAndProjectId(Integer eId, Integer pId) {
         return this.employeeProjectViewRepo.findAllByEmployeeIdAndProjectId(eId, pId);
     }

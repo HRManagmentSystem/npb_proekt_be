@@ -5,10 +5,9 @@ import mk.ukim.finki.npb_proekt_be.model.EmployeeLeaveView;
 import mk.ukim.finki.npb_proekt_be.service.EmployeeLeaveViewService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -18,9 +17,14 @@ public class EmployeeLeaveViewController {
 
     private final EmployeeLeaveViewService employeeLeaveViewService;
 
+    @GetMapping("/first")
+    public List<EmployeeLeaveView> findFirstEmployeeLeaveView(@RequestParam Integer n) {
+        return this.employeeLeaveViewService.findFirstEmployeeLeaveView(n);
+    }
+
     @GetMapping("")
-    public List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(){
-        return this.employeeLeaveViewService.findAllByEmployeeIdAndLeaveTypeId(16509,5);
+    public List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(@RequestParam Integer eId,@RequestParam Integer ltId){
+        return this.employeeLeaveViewService.findAllByEmployeeIdAndLeaveTypeId(eId,ltId);
     }
 
 }

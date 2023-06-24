@@ -16,4 +16,8 @@ public class DepartmentProjectsService {
     public List<DepartmentProjects> findDepartmentProjectsById(Integer id, Integer pId) {
         return departmentProjectsRepo.findDepartmentProjectsByDepartmentIdAndProjectId(id, pId);
     }
+
+    public List<DepartmentProjects> findFirstDepartmentProjects(Integer n) {
+        return this.departmentProjectsRepo.findFirstDepartmentProjects(n);
+    }
 }

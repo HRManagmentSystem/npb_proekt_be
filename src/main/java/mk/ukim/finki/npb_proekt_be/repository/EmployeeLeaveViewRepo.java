@@ -13,5 +13,8 @@ import java.util.List;
 @Repository
 public interface EmployeeLeaveViewRepo extends JpaRepository<EmployeeLeaveView,Integer> {
 
+    @Query(value = "select * from employee_leave_view  limit :n",nativeQuery = true)
+    List<EmployeeLeaveView> findFirstEmployeeLeaveView(Integer n);
+
     List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(Integer eId, Integer ltId);
 }

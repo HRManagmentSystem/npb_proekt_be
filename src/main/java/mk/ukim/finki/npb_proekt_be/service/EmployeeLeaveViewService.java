@@ -16,6 +16,10 @@ public class EmployeeLeaveViewService {
 
     private final EmployeeLeaveViewRepo employeeLeaveViewRepo;
 
+    public List<EmployeeLeaveView> findFirstEmployeeLeaveView(Integer n) {
+        return this.employeeLeaveViewRepo.findFirstEmployeeLeaveView(n);
+    }
+
     public List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(Integer eId, Integer ltId){
         return this.employeeLeaveViewRepo.findAllByEmployeeIdAndLeaveTypeId(eId,ltId);
     }
