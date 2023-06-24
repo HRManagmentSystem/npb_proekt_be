@@ -3,10 +3,7 @@ package mk.ukim.finki.npb_proekt_be.controller;
 import lombok.AllArgsConstructor;
 import mk.ukim.finki.npb_proekt_be.model.EmployeeMostRecentPaymentView;
 import mk.ukim.finki.npb_proekt_be.service.EmployeeMostRecentPaymentViewService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,4 +24,8 @@ public class EmployeeMostRecentPaymentViewController {
         return this.employeeMostRecentPaymentViewService.findAllByEmployeeIdAndPaymentId(eId, pId);
     }
 
+    @PostMapping("/paySlip")
+    public void generatePaySlip(@RequestParam Integer employeeId,@RequestParam Integer month, @RequestParam Integer year, @RequestParam Integer bonus) {
+        this.employeeMostRecentPaymentViewService.generatePaySlip(employeeId, month, year, bonus);
+    }
 }

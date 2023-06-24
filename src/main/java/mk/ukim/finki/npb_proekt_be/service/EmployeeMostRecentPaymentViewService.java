@@ -3,6 +3,7 @@ package mk.ukim.finki.npb_proekt_be.service;
 import lombok.AllArgsConstructor;
 import mk.ukim.finki.npb_proekt_be.model.EmployeeMostRecentPaymentView;
 import mk.ukim.finki.npb_proekt_be.repository.EmployeeMostRecentPaymentViewRepo;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,10 @@ public class EmployeeMostRecentPaymentViewService {
 
     public List<EmployeeMostRecentPaymentView> findAllByEmployeeIdAndPaymentId(Integer eId, Integer pId) {
         return this.employeeMostRecentPaymentViewRepo.findAllByEmployeeIdAndPaymentId(eId, pId);
+    }
+
+    public void generatePaySlip(Integer employeeId, Integer month, Integer year, Integer bonus) {
+        this.employeeMostRecentPaymentViewRepo.generatePaySlip(employeeId, month, year, bonus);
     }
 
 }
