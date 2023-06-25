@@ -3,11 +3,12 @@ package mk.ukim.finki.npb_proekt_be.controller;
 import lombok.AllArgsConstructor;
 import mk.ukim.finki.npb_proekt_be.model.EmployeeAddressInformation;
 import mk.ukim.finki.npb_proekt_be.service.EmployeeAddressInformationService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -23,8 +24,14 @@ public class EmployeeAddressInformationController {
     }
 
     @GetMapping("")
-    List<EmployeeAddressInformation> findEmployeeAddressInformationByEmployeeIdAndPlaceId(@RequestParam Integer eId, @RequestParam Integer pId) {
+    public List<EmployeeAddressInformation> findEmployeeAddressInformationByEmployeeIdAndPlaceId(@RequestParam Integer eId, @RequestParam Integer pId) {
         return this.employeeAddressInformationService.findEmployeeAddressInformationByEmployeeIdAndPlaceId(eId, pId);
+    }
+
+    @PostMapping("/changeEmployeeStatus")
+    public void changeEmployeeStatus(@RequestParam Integer employee,@RequestParam String employee_status,@RequestParam String effective_date) throws ParseException {
+        Date effective = new SimpleDateFormat("yyyy-MM-dd").parse(effective_date);
+        this.employeeAddressInformationService.changeEmployeeStatus(employee, employee_status, effective);
     }
 
 }

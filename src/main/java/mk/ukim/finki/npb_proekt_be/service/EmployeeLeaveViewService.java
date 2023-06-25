@@ -23,4 +23,8 @@ public class EmployeeLeaveViewService {
     public List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(Integer eId, Integer ltId){
         return this.employeeLeaveViewRepo.findAllByEmployeeIdAndLeaveTypeId(eId,ltId);
     }
+
+    public void insertEmployeeLeave(Integer employee,Integer leave_type,Integer reason_for_leave,Date start_date,Date end_date) {
+        this.employeeLeaveViewRepo.insertEmployeeLeave(employee, leave_type, reason_for_leave, start_date, end_date);
+    }
 }
