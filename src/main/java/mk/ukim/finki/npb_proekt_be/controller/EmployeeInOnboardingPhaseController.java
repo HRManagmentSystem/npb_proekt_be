@@ -1,7 +1,7 @@
 package mk.ukim.finki.npb_proekt_be.controller;
 
 import lombok.AllArgsConstructor;
-import mk.ukim.finki.npb_proekt_be.model.EmployeeInOnboardingPhase;
+import mk.ukim.finki.npb_proekt_be.model.EmployeeOnboardingOffboardingPhase;
 import mk.ukim.finki.npb_proekt_be.service.EmployeeInOnboardingPhaseService;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,18 +13,14 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/employeeInOnboardingPhase")
+@CrossOrigin("http://localhost:3000")
 public class EmployeeInOnboardingPhaseController {
 
     private final EmployeeInOnboardingPhaseService employeeInOnboardingPhaseService;
 
     @GetMapping("/first")
-    public List<EmployeeInOnboardingPhase> findFirstEmployeeInOnboardingPhase(@RequestParam Integer n) {
+    public List<EmployeeOnboardingOffboardingPhase> findFirstEmployeeInOnboardingPhase(@RequestParam Integer n) {
         return this.employeeInOnboardingPhaseService.findFirstEmployeeInOnboardingPhase(n);
-    }
-
-    @GetMapping("")
-    public List<EmployeeInOnboardingPhase> findAllByEmployeeIdAndProgramId(@RequestParam Integer eId, @RequestParam Integer pId) {
-        return this.employeeInOnboardingPhaseService.findAllByEmployeeIdAndProgramId(eId, pId);
     }
 
     @PostMapping("/insertEmployee")

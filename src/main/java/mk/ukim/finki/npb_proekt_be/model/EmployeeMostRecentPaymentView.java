@@ -16,8 +16,8 @@ public class EmployeeMostRecentPaymentView {
     @Column(name = "payment_id")
     private Integer paymentId;
 
-    @Column(name = "total_salary")
-    private Integer totalSalary;
+    @Column(name = "total_amount")
+    private Integer totalAmount;
 
     @Column(name = "comment")
     private String comment;
@@ -25,8 +25,8 @@ public class EmployeeMostRecentPaymentView {
     @Column(name = "most_resent_payment_change_date")
     private Date mostResentPaymentChangeDate;
 
-    @Column(name = "bonus")
-    private Integer bonus;
+    @Column(name = "bonus_included_in_amount")
+    private Integer bonusIncludedInAmount;
 
     @Column(name = "employee_id")
     private Integer employeeId;
@@ -40,11 +40,8 @@ public class EmployeeMostRecentPaymentView {
     @Column(name = "payment_type_id")
     private Integer paymentTypeId;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "payment_type_amount")
-    private Integer paymentTypeAmount;
+    @Column(name = "payment_type_name")
+    private String paymentTypeName;
 
     @Column(name = "payment_change_reason_id")
     private Integer paymentChangeReasonId;

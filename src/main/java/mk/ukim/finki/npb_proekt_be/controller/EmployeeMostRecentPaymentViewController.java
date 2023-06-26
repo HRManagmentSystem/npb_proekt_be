@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/employeeMostRecentPaymentView")
+@CrossOrigin("http://localhost:3000")
 public class EmployeeMostRecentPaymentViewController {
 
     private final EmployeeMostRecentPaymentViewService employeeMostRecentPaymentViewService;

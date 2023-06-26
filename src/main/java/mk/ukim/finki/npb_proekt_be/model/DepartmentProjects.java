@@ -8,41 +8,62 @@ import lombok.Data;
 import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
 
+import java.util.Date;
+
 @Entity
 @Immutable
 @Data
-@Table(name="department_projects")
+@Table(name = "department_projects")
 public class DepartmentProjects {
-
     @Id
-    @Column(name="department_id")
+    @Column(name = "department_id")
     private Integer departmentId;
 
-    @Column(name="departmentname")
+    @Column(name = "departmentname")
     private String departmentName;
 
-    @Column(name="departmenttype_id")
+    @Column(name = "departmenttype_id")
     private Integer departmentTypeId;
 
-    @Column(name="departmenttype")
+    @Column(name = "departmenttype")
     private String departmentType;
 
-    @Column(name="project_id")
+    @Column(name = "project_id")
     private Integer projectId;
 
-    @Column(name="projectname")
+    @Column(name = "projectname")
     private String projectName;
 
-    @Column(name="projectcategory")
+    @Column(name = "projectcategory")
     private String projectCategory;
 
-    @Column(name="hierarchy_id")
-    private Integer hierarchyId;
-
-    @Column(name="phase_id")
+    @Column(name = "phase_id")
     private Integer phaseId;
 
-    @Column(name="phase")
+    @Column(name = "phase")
     private String phase;
 
+    @Column(name = "phase_date_from")
+    private Date phaseDateFrom;
+
+    @Column(name = "phase_date_to")
+    private Date phaseDateTo;
+
+    @Column(name = "hierarchy_id")
+    private Integer hierarchyId;
+
+    @Column(name = "employee_id")
+    private Integer employeeId;
+
+    @Column(name = "employee_name")
+    private String employeeName;
+
+    @Column(name = "employee_ssn")
+    private String employeeSsn;
+
+    @Column(name = "project_position_id")
+    private Integer projectPositionId;
+
+    @Column(name = "project_position_name")
+    private String projectPositionName;
 }

@@ -20,21 +20,27 @@ public class NewsInCompany {
     @Column(name = "news_description")
     private String newsDescription;
 
-    @Column(name = "publisher_id")
-    private Integer publisherId;
+    @Column(name = "employee_publish_id")
+    private Integer employeePublishId;
 
-    @Column(name = "employee_name")
-    private String employeeName;
+    @Column(name = "employee_publish_full_name")
+    private String employeePublishFullNameName;
 
-    @Column(name = "newscategory_id")
+    @Column(name = "news_category_id")
     private Integer newsCategoryId;
 
-    @Column(name = "newscategory_description")
+    @Column(name = "news_category_name")
+    private String newCategoryName;
+
+    @Column(name = "news_category_description")
     private String newsCategoryDescription;
 
-    @Column(name = "employeegroup_id")
+    @Column(name = "employee_group_id")
     private Integer employeeGroupId;
 
-    @Column(name = "employeegroup_description")
+    @Column(name = "employee_group_name")
+    private String employeeGroupName;
+
+    @Column(name = "employee_group_description")
     private String employeeGroupDescription;
 }

@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/employeeProjectView")
+@CrossOrigin("http://localhost:3000")
 public class EmployeeProjectViewController {
 
     private final EmployeeProjectViewService employeeProjectViewService;

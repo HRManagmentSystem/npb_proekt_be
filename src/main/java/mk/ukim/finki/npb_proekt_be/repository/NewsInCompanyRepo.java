@@ -13,6 +13,4 @@ public interface NewsInCompanyRepo extends JpaRepository<NewsInCompany, Integer>
     @Query(value = "select * from news_in_company limit :n",nativeQuery = true)
     List<NewsInCompany> findFirstNewsInCompany(Integer n);
 
-    List<NewsInCompany> findAllByNewsIdAndPublisherId(Integer nId,Integer pId);
-
 }

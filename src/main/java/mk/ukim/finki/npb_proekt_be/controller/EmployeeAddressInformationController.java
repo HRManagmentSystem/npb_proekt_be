@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/employeeAddressInformation")
+@CrossOrigin("http://localhost:3000")
 public class EmployeeAddressInformationController {
 
     private final EmployeeAddressInformationService employeeAddressInformationService;

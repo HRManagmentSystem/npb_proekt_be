@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/employeeLeaveView")
+@CrossOrigin("http://localhost:3000")
 public class EmployeeLeaveViewController {
 
     private final EmployeeLeaveViewService employeeLeaveViewService;
