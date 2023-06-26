@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface DepartmentProjectsRepo extends JpaRepository<DepartmentProjects, Integer>{
 
-    @Query(value = "select distinct * from department_projects limit :n", nativeQuery = true)
+    @Query(value = "select * from department_projects limit :n", nativeQuery = true)
     List<DepartmentProjects> findFirstDepartmentProjects(Integer n);
 
     List<DepartmentProjects> findDepartmentProjectsByDepartmentIdAndProjectId(Integer id,Integer pId);
