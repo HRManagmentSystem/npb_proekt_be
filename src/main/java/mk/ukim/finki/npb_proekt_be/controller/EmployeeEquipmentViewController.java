@@ -16,7 +16,7 @@ public class EmployeeEquipmentViewController {
     private final EmployeeEquipmentViewService employeeEquipmentViewService;
 
     @GetMapping("/first")
-    public List<EmployeeEquipmentView> findFirstEmployeeEquipmentView(Integer n) {
+    public List<EmployeeEquipmentView> findFirstEmployeeEquipmentView(@RequestParam Integer n) {
         return this.employeeEquipmentViewService.findFirstEmployeeEquipmentView(n);
     }
 

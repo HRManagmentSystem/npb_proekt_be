@@ -16,7 +16,7 @@ public class NewsInCompanyController {
     private final NewsInCompanyService newsInCompanyService;
 
     @GetMapping("/first")
-    public List<NewsInCompany> findFirstNewsInCompany(Integer n) {
+    public List<NewsInCompany> findFirstNewsInCompany(@RequestParam Integer n) {
         return this.newsInCompanyService.findFirstNewsInCompany(n);
     }
 }
