@@ -18,6 +18,14 @@ public class NewsInCompanyService {
     }
 
     public List<NewsInCompany> filterNews(Integer id, Integer gId){
-        return this.newsInCompanyRepo.filterNews(id,gId);
+        if(id != null && gId != null) {
+            return this.newsInCompanyRepo.filterNews(id,gId);
+        }
+        else if(id!= null) {
+            return this.newsInCompanyRepo.filterNewsById(id);
+        }
+        else{
+            return this.newsInCompanyRepo.filterNewsBygId(gId);
+        }
     }
 }
