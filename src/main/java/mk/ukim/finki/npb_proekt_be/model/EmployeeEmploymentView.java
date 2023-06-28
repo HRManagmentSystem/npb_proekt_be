@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Immutable;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 
 @Entity
@@ -29,7 +31,7 @@ public class EmployeeEmploymentView {
     private String currentWorkPositionName;
 
     @Column(name = "curren_percentage_work_time")
-    private Integer currentPercentageWorkTime;
+    private String currentPercentageWorkTime;
 
     @Column(name = "current_department_name")
     private String currentDepartmentName;
@@ -38,7 +40,7 @@ public class EmployeeEmploymentView {
     private String currentDepartmentTypeName;
 
     @Column(name = "current_work_place_salary")
-    private Integer currentWorkPlaceSalary;
+    private BigDecimal currentWorkPlaceSalary;
 
     @Column(name = "current_work_place_full_time_salary")
     private Integer currentWorkPlaceFullTimeSalary;
@@ -62,7 +64,7 @@ public class EmployeeEmploymentView {
     private String previousWorkPositionName;
 
     @Column(name = "previous_percentage_work_time")
-    private Integer previousPercentageWorkTime;
+    private String previousPercentageWorkTime;
 
     @Column(name = "previous_department_name")
     private String previousDepartmentName;
@@ -71,7 +73,7 @@ public class EmployeeEmploymentView {
     private String previousDepartmentTypeName;
 
     @Column(name = "previous_work_place_salary")
-    private Integer previousWorkPlaceSalary;
+    private BigDecimal previousWorkPlaceSalary;
 
     @Column(name = "previous_work_place_full_time_salary")
     private Integer previousWorkPlaceFullTimeSalary;

@@ -22,9 +22,9 @@ public class EmployeeProjectViewController {
     public List<EmployeeProjectView> findFirstEmployeeProjectView(@RequestParam Integer n) {
         return this.employeeProjectViewService.findFirstEmployeeProjectView(n);
     }
-    @GetMapping("")
-    public List<EmployeeProjectView> findAllByEmployeeIdAndProjectId(@RequestParam Integer eId, @RequestParam Integer pId) {
-        return this.employeeProjectViewService.findAllByEmployeeIdAndProjectId(eId, pId);
+    @GetMapping("/filterById")
+    public List<EmployeeProjectView> findAllByEmployeeIdAndProjectIdAndDepartmentId(@RequestParam Integer eId,@RequestParam Integer pId,@RequestParam Integer dId){
+        return this.employeeProjectViewService.findAllByEmployeeIdAndProjectIdAndDepartmentId(eId, pId, dId);
     }
 
     @PostMapping("/insertEmployeeProjectPosition")

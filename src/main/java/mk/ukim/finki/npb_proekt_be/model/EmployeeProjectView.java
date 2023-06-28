@@ -12,9 +12,6 @@ import java.util.Date;
 @Table(name = "employee_project_view")
 public class EmployeeProjectView {
     @Id
-    @Column(name = "project_hierarchy_id")
-    private Integer projectHierarchyId;
-
     @Column(name = "employee_id")
     private Integer employeeId;
 
@@ -24,11 +21,20 @@ public class EmployeeProjectView {
     @Column(name = "employee_last_name")
     private String employeeLastName;
 
+    @Column(name = "project_hierarchy_id")
+    private Integer projectHierarchyId;
+
     @Column(name = "projct_id")
     private Integer projectId;
 
     @Column(name = "project_name")
     private String projectName;
+
+    @Column(name = "department_id")
+    private Integer departmentId;
+
+    @Column(name = "department_name")
+    private String departmentName;
 
     @Column(name = "from_date")
     private Date fromDate;

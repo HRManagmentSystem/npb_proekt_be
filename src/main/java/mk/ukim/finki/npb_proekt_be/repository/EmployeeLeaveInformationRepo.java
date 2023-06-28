@@ -12,4 +12,7 @@ public interface EmployeeLeaveInformationRepo extends JpaRepository<EmployeeLeav
 
     @Query(value = "select * from employee_leave_information limit :n",nativeQuery = true)
     List<EmployeeLeaveInformation> findFirstEmployeeLeaveInformation(Integer n);
+
+    @Query(value = "select * from employee_leave_information where employee_id = :id and leave_type_id = :ltId and free_days = :fd limit 50",nativeQuery = true)
+    List<EmployeeLeaveInformation> filterEmployeeLeaveInformation(Integer id, Integer ltId, Integer fd);
 }

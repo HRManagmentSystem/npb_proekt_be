@@ -13,4 +13,6 @@ public interface EmployeeEmploymentViewRepo extends JpaRepository<EmployeeEmploy
     @Query(value = "select * from employee_employment_view limit :n",nativeQuery = true)
     List<EmployeeEmploymentView> findFirstEmployeeEmploymentView(Integer n);
 
+    @Query(value = "select * from employee_employment_view where employee_id = :id",nativeQuery = true)
+    List<EmployeeEmploymentView> findEmployeesById(Integer id);
 }

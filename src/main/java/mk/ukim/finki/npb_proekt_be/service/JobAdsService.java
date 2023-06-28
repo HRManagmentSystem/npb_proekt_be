@@ -18,8 +18,8 @@ public class JobAdsService {
         return this.jobAdsRepo.findFirstJobAds(n);
     }
 
-    public List<JobAds> findJobsById(Integer jobAdsId) {
-        return this.jobAdsRepo.findJobAdsByJobAdId(jobAdsId);
+    public List<JobAds> findJobsByWorklocationid(Integer id){
+        return this.jobAdsRepo.findJobsByWorklocationid(id);
     }
 
    public void insertJobAd(String urgency_passed,

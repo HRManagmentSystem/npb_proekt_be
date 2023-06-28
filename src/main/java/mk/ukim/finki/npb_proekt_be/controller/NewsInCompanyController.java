@@ -19,4 +19,9 @@ public class NewsInCompanyController {
     public List<NewsInCompany> findFirstNewsInCompany(@RequestParam Integer n) {
         return this.newsInCompanyService.findFirstNewsInCompany(n);
     }
+
+    @GetMapping("/filterById")
+    public List<NewsInCompany> filterNews(@RequestParam Integer id,@RequestParam Integer gId){
+        return this.newsInCompanyService.filterNews(id,gId);
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -17,7 +18,8 @@ public interface EmployeeMostRecentPaymentViewRepo extends JpaRepository<Employe
     @Query(value = "select * from employee_most_recent_payment_view limit :n",nativeQuery = true)
     List<EmployeeMostRecentPaymentView> findFirstEmployeeMostRecentPaymentView(Integer n);
 
-    List<EmployeeMostRecentPaymentView> findAllByEmployeeIdAndPaymentId(Integer eId,Integer pId);
+    @Query(value = "select * from employee_most_recent_payment_view where employee_id = :id and most_resent_payment_change_date = :date",nativeQuery = true)
+    List<EmployeeMostRecentPaymentView> findByEmployeeIdandMostResentPaymentChangeDate(Integer id, Date date);
 
     @Modifying
     @Query(value = "call generate_pay_slip(:employeeId,:month, :year, :bonus)", nativeQuery = true)

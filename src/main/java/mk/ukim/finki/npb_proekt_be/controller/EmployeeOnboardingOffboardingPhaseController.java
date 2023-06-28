@@ -2,7 +2,7 @@ package mk.ukim.finki.npb_proekt_be.controller;
 
 import lombok.AllArgsConstructor;
 import mk.ukim.finki.npb_proekt_be.model.EmployeeOnboardingOffboardingPhase;
-import mk.ukim.finki.npb_proekt_be.service.EmployeeInOnboardingPhaseService;
+import mk.ukim.finki.npb_proekt_be.service.EmployeeInOnboardingOffboardingPhaseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -12,15 +12,20 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/employeeInOnboardingPhase")
+@RequestMapping("/api/employeeOnboardingOffboardingPhase")
 @CrossOrigin("http://localhost:3000")
-public class EmployeeInOnboardingPhaseController {
+public class EmployeeOnboardingOffboardingPhaseController {
 
-    private final EmployeeInOnboardingPhaseService employeeInOnboardingPhaseService;
+    private final EmployeeInOnboardingOffboardingPhaseService employeeInOnboardingOffboardingPhaseService;
 
     @GetMapping("/first")
     public List<EmployeeOnboardingOffboardingPhase> findFirstEmployeeInOnboardingPhase(@RequestParam Integer n) {
-        return this.employeeInOnboardingPhaseService.findFirstEmployeeInOnboardingPhase(n);
+        return this.employeeInOnboardingOffboardingPhaseService.findFirstEmployeeInOnboardingPhase(n);
+    }
+
+    @GetMapping("/findById")
+    public List<EmployeeOnboardingOffboardingPhase> findEmployeesById(@RequestParam Integer id){
+        return this.employeeInOnboardingOffboardingPhaseService.findEmployeesById(id);
     }
 
     @PostMapping("/insertEmployee")
@@ -40,6 +45,6 @@ public class EmployeeInOnboardingPhaseController {
                                @RequestParam String middle_name,
                                @RequestParam String email_address) throws ParseException {
         Date birth = new SimpleDateFormat("yyyy-MM-dd").parse(date_of_birth);
-        this.employeeInOnboardingPhaseService.insertEmployee(first_name, last_name, birth, age, ssn, street, city, postal_code, country, onboarding_offboarding_program_id, work_location_id, suffix, phone, middle_name, email_address);
+        this.employeeInOnboardingOffboardingPhaseService.insertEmployee(first_name, last_name, birth, age, ssn, street, city, postal_code, country, onboarding_offboarding_program_id, work_location_id, suffix, phone, middle_name, email_address);
     }
 }

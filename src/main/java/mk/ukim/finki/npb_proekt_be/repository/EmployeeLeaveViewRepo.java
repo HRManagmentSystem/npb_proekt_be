@@ -19,6 +19,7 @@ public interface EmployeeLeaveViewRepo extends JpaRepository<EmployeeLeaveView,I
     @Query(value = "select * from employee_leave_view  limit :n",nativeQuery = true)
     List<EmployeeLeaveView> findFirstEmployeeLeaveView(Integer n);
 
+    @Query(value = "select * from employee_leave_view where employee_id = :eId and leave_type_id = :ltId limit 50",nativeQuery = true)
     List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(Integer eId, Integer ltId);
 
     @Modifying

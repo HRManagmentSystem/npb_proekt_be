@@ -17,8 +17,8 @@ public interface JobAdsRepo extends JpaRepository<JobAds, Integer> {
 
     @Query(value = "select * from job_ads limit :n",nativeQuery = true)
     List<JobAds> findFirstJobAds(Integer n);
-
-    List<JobAds> findJobAdsByJobAdId(Integer jobAdsId);
+    @Query(value = "select * from job_ads where worklocationid = :id limit 10",nativeQuery = true)
+    List<JobAds> findJobsByWorklocationid(Integer id);
 
     @Modifying
     @Query(value = "call insert_job_ad(:urgency_passed, :description_passed,:date_opened_passed,:work_location,:work_place,:if_exists_update)", nativeQuery = true)

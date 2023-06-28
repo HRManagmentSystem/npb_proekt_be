@@ -23,7 +23,7 @@ public class EmployeeLeaveViewController {
         return this.employeeLeaveViewService.findFirstEmployeeLeaveView(n);
     }
 
-    @GetMapping("")
+    @GetMapping("/filterById")
     public List<EmployeeLeaveView> findAllByEmployeeIdAndLeaveTypeId(@RequestParam Integer eId, @RequestParam Integer ltId) {
         return this.employeeLeaveViewService.findAllByEmployeeIdAndLeaveTypeId(eId, ltId);
     }

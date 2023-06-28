@@ -13,10 +13,13 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface EmployeeInOnboardingPhaseRepo extends JpaRepository<EmployeeOnboardingOffboardingPhase, Integer> {
+public interface EmployeeInOnboardingOffboardingPhaseRepo extends JpaRepository<EmployeeOnboardingOffboardingPhase, Integer> {
 
     @Query(value = "select * from employee_in_onboarding_offboarding_phase  limit :n",nativeQuery = true)
     List<EmployeeOnboardingOffboardingPhase> findFirstEmployeeInOnboardingPhase(Integer n);
+
+    @Query(value = "select * from employee_in_onboarding_offboarding_phase where id = :id",nativeQuery = true)
+    List<EmployeeOnboardingOffboardingPhase> findEmployeesById(Integer id);
 
     @Modifying
     @Query(value = "call insert_employee("+

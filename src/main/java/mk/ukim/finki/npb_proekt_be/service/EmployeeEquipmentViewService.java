@@ -19,6 +19,6 @@ public class EmployeeEquipmentViewService {
     }
 
     public List<EmployeeEquipmentView> findEmployeeEquipmentViewByEmployeeIdAndEquipmentId(Integer eId, Integer eqId) {
-        return this.employeeEquipmentViewRepo.findAllByEmployeeIdAndEquipmentId(eId,eqId);
+        return this.employeeEquipmentViewRepo.findEmployeeByIdAndEquipmentId(eId,eqId);
     }
 }

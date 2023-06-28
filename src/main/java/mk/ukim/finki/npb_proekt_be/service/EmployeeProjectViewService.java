@@ -19,8 +19,8 @@ public class EmployeeProjectViewService {
         return this.employeeProjectViewRepo.findFirstEmployeeProjectView(n);
     }
 
-    public List<EmployeeProjectView> findAllByEmployeeIdAndProjectId(Integer eId, Integer pId) {
-        return this.employeeProjectViewRepo.findAllByEmployeeIdAndProjectId(eId, pId);
+    public List<EmployeeProjectView> findAllByEmployeeIdAndProjectIdAndDepartmentId(Integer eId,Integer pId,Integer dId){
+        return this.employeeProjectViewRepo.findAllByEmployeeIdAndProjectIdAndDepartmentId(eId, pId, dId);
     }
 
     public void insertEmployeeProjectPosition(

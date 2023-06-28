@@ -16,4 +16,8 @@ public class EmployeeEmploymentViewService {
     public List<EmployeeEmploymentView> findFirstEmployeeEmploymentView(Integer n) {
         return this.employeeEmploymentViewRepo.findFirstEmployeeEmploymentView(n);
     }
+
+    public List<EmployeeEmploymentView> findEmployeesById(Integer id) {
+        return this.employeeEmploymentViewRepo.findEmployeesById(id);
+    }
 }

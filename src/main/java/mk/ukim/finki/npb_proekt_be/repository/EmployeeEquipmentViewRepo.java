@@ -12,6 +12,7 @@ public interface EmployeeEquipmentViewRepo extends JpaRepository<EmployeeEquipme
 
     @Query(value = "select * from employee_equipment_view limit :n",nativeQuery = true)
     List<EmployeeEquipmentView> findFirstEmployeeEquipmentView(Integer n);
-    List<EmployeeEquipmentView> findAllByEmployeeIdAndEquipmentId(Integer eId, Integer eqId);
 
+    @Query(value = "select * from employee_equipment_view where employee_id = :id and equipment_id = :eqId limit 50",nativeQuery = true)
+    List<EmployeeEquipmentView> findEmployeeByIdAndEquipmentId(Integer id, Integer eqId);
 }

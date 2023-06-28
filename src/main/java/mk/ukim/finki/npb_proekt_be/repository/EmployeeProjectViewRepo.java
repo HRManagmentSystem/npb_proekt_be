@@ -15,10 +15,11 @@ import java.util.List;
 @Transactional
 public interface EmployeeProjectViewRepo extends JpaRepository<EmployeeProjectView, Integer> {
 
-    @Query(value = "select * from employee_project_view limit :n", nativeQuery = true)
+    @Query(value = "select * from employee_project_view where project_hierarchy_id is not null limit :n", nativeQuery = true)
     List<EmployeeProjectView> findFirstEmployeeProjectView(Integer n);
 
-    List<EmployeeProjectView> findAllByEmployeeIdAndProjectId(Integer eId,Integer pId);
+    @Query(value = "select * from employee_project_view where project_hierarchy_id is not null and employee_id=:eId and projct_id=:pId and department_id=:dId limit 50", nativeQuery = true)
+    List<EmployeeProjectView> findAllByEmployeeIdAndProjectIdAndDepartmentId(Integer eId,Integer pId,Integer dId);
 
     @Modifying
     @Query(value = "call insert_employee_project_position(:employee,:project,:project_position,:reports_to_project_hierarchy,:from_date_project,:if_exists_update)",nativeQuery = true)

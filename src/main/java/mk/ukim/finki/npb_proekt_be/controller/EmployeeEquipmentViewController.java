@@ -20,7 +20,7 @@ public class EmployeeEquipmentViewController {
         return this.employeeEquipmentViewService.findFirstEmployeeEquipmentView(n);
     }
 
-    @GetMapping("")
+    @GetMapping("/filterById")
     public List<EmployeeEquipmentView> findEmployeeEquipmentViewByEmployeeIdAndEquipmentId(@RequestParam Integer eId, @RequestParam Integer eqId) {
         return this.employeeEquipmentViewService.findEmployeeEquipmentViewByEmployeeIdAndEquipmentId(eId, eqId);
     }

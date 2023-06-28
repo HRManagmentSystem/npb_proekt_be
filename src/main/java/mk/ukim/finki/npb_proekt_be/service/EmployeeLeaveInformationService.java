@@ -16,4 +16,8 @@ public class EmployeeLeaveInformationService {
     public List<EmployeeLeaveInformation> findFirstEmployeeLeaveInformation(Integer n) {
         return this.employeeLeaveInformationRepo.findFirstEmployeeLeaveInformation(n);
     }
+
+    public List<EmployeeLeaveInformation> filterEmployeeLeaveInformation(Integer id, Integer ltId, Integer fd){
+        return this.employeeLeaveInformationRepo.filterEmployeeLeaveInformation(id, ltId, fd);
+    }
 }

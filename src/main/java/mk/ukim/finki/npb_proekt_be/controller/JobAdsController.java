@@ -24,9 +24,9 @@ public class JobAdsController {
         return this.jobAdsService.findFirstJobAds(n);
     }
 
-    @GetMapping("")
-    public List<JobAds> getAllJobs(@RequestParam Integer jobAdsId) {
-        return jobAdsService.findJobsById(jobAdsId);
+    @GetMapping("/filterById")
+    public List<JobAds> findJobsByWorklocationid(Integer id){
+        return this.jobAdsService.findJobsByWorklocationid(id);
     }
 
     @PostMapping("/insertJobAd")

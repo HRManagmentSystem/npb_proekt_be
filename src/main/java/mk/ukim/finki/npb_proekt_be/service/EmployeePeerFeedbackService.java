@@ -16,4 +16,8 @@ public class EmployeePeerFeedbackService {
     public List<EmployeePeerFeedback> findFirstEmployeePeerFeedback(Integer n) {
         return this.employeePeerFeedbackRepo.findFirstEmployeePeerFeedback(n);
     }
+
+    public List<EmployeePeerFeedback> filterByIds(Integer id, Integer idQ, Integer idA) {
+        return this.employeePeerFeedbackRepo.filterByIds(id, idQ, idA);
+    }
 }

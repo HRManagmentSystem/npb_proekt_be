@@ -16,4 +16,8 @@ public class NewsInCompanyService {
     public List<NewsInCompany> findFirstNewsInCompany(Integer n) {
         return this.newsInCompanyRepo.findFirstNewsInCompany(n);
     }
+
+    public List<NewsInCompany> filterNews(Integer id, Integer gId){
+        return this.newsInCompanyRepo.filterNews(id,gId);
+    }
 }

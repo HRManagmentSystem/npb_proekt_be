@@ -5,6 +5,9 @@ import mk.ukim.finki.npb_proekt_be.model.EmployeeMostRecentPaymentView;
 import mk.ukim.finki.npb_proekt_be.service.EmployeeMostRecentPaymentViewService;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -20,9 +23,10 @@ public class EmployeeMostRecentPaymentViewController {
         return this.employeeMostRecentPaymentViewService.findFirstEmployeeMostRecentPaymentView(n);
     }
 
-    @GetMapping("")
-    public List<EmployeeMostRecentPaymentView> findAllByEmployeeIdAndPaymentId(@RequestParam Integer eId, @RequestParam Integer pId) {
-        return this.employeeMostRecentPaymentViewService.findAllByEmployeeIdAndPaymentId(eId, pId);
+    @GetMapping("findById")
+    public List<EmployeeMostRecentPaymentView> findByEmployeeIdandMostResentPaymentChangeDate(@RequestParam Integer id,@RequestParam String date) throws ParseException {
+        Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        return this.employeeMostRecentPaymentViewService.findByEmployeeIdandMostResentPaymentChangeDate(id, d);
     }
 
     @PostMapping("/paySlip")
