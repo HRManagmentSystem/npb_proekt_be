@@ -30,8 +30,13 @@ public class EmployeeProjectViewService {
             Integer reports_to_project_hierarchy,
             Date from_date_project,
             Boolean if_exists_update
-    ) {
-        this.employeeProjectViewRepo.insertEmployeeProjectPosition(employee, project, project_position, reports_to_project_hierarchy, from_date_project, if_exists_update);
+    ) throws Exception {
+        try{
+            this.employeeProjectViewRepo.insertEmployeeProjectPosition(employee, project, project_position, reports_to_project_hierarchy, from_date_project, if_exists_update);
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 }

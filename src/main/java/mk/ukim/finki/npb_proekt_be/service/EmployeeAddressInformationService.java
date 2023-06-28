@@ -23,7 +23,12 @@ public class EmployeeAddressInformationService {
         return this.employeeAddressInformationRepo.findAllByEmployeeIdAndPlaceId(eId,pId);
     }
 
-    public void changeEmployeeStatus(Integer employee,String employee_status,Date effective_date){
-        this.employeeAddressInformationRepo.changeEmployeeStatus(employee, employee_status, effective_date);
+    public void changeEmployeeStatus(Integer employee,String employee_status,Date effective_date) throws Exception {
+        try{
+            this.employeeAddressInformationRepo.changeEmployeeStatus(employee, employee_status, effective_date);
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 }

@@ -23,8 +23,13 @@ public class EmployeeMostRecentPaymentViewService {
         return this.employeeMostRecentPaymentViewRepo.findByEmployeeIdandMostResentPaymentChangeDate(id, date);
     }
 
-    public void generatePaySlip(Integer employeeId, Integer month, Integer year, Integer bonus) {
-        this.employeeMostRecentPaymentViewRepo.generatePaySlip(employeeId, month, year, bonus);
+    public void generatePaySlip(Integer employeeId, Integer month, Integer year, Integer bonus) throws Exception {
+        try{
+            this.employeeMostRecentPaymentViewRepo.generatePaySlip(employeeId, month, year, bonus);
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 }

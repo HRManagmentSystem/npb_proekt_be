@@ -6,6 +6,7 @@ import mk.ukim.finki.npb_proekt_be.repository.JobAdsRepo;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -27,8 +28,13 @@ public class JobAdsService {
                      Date date_opened_passed,
                      Integer work_location,
                      Integer work_place,
-                     Boolean if_exists_update) {
-        this.jobAdsRepo.insertJobAd(urgency_passed, description_passed, date_opened_passed, work_location, work_place, if_exists_update);
+                     Boolean if_exists_update) throws Exception {
+        try{
+            this.jobAdsRepo.insertJobAd(urgency_passed, description_passed, date_opened_passed, work_location, work_place, if_exists_update);
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
    }
 
    public void applicationSubmission(String application_description,
@@ -48,8 +54,12 @@ public class JobAdsService {
                                      String applicant_highest_education,
                                      String applicant_work_experience,
                                      Integer applied_for_job_ad_id
-   ){
-        this.jobAdsRepo.applicationSubmission(application_description, attached_document_subject, attached_document_file_type, attached_document_type, attached_document_date, attached_document_content, applicant_ssn, applicant_name, applicant_surname, applicant_date_of_birth, applicant_email, applicant_phone, applicant_city, applicant_country, applicant_highest_education, applicant_work_experience, applied_for_job_ad_id);
+   ) throws Exception {
+        try{
+            this.jobAdsRepo.applicationSubmission(application_description, attached_document_subject, attached_document_file_type, attached_document_type, attached_document_date, attached_document_content, applicant_ssn, applicant_name, applicant_surname, applicant_date_of_birth, applicant_email, applicant_phone, applicant_city, applicant_country, applicant_highest_education, applicant_work_experience, applied_for_job_ad_id);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
    }
 
 }

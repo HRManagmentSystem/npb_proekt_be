@@ -29,7 +29,12 @@ public class EmployeeInOnboardingOffboardingPhaseService {
                                String country, Integer onboarding_offboarding_program_id,
                                Integer work_location_id, String suffix,
                                String phone, String middle_name,
-                               String email_address) {
-        this.employeeInOnboardingOffboardingPhaseRepo.insertEmployee(first_name, last_name, date_of_birth, age, ssn, street, city, postal_code, country, onboarding_offboarding_program_id, work_location_id, suffix, phone, middle_name, email_address);
+                               String email_address) throws Exception {
+        try{
+            this.employeeInOnboardingOffboardingPhaseRepo.insertEmployee(first_name, last_name, date_of_birth, age, ssn, street, city, postal_code, country, onboarding_offboarding_program_id, work_location_id, suffix, phone, middle_name, email_address);
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 }
